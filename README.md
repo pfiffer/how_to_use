@@ -1,12 +1,16 @@
 # how_to_use
+
 Instructions to use the Direct Optimization Method (PSO) on the Standard PUNQ-S3 model
 
 Title: New Efficient Method for Injection Well Location Optimization using Fast Marching Method
+
 Author: Reza Yusefzadeh
+
 Email: reza_yusef@yahoo.com
 
 
 Files included:
+
 1- PSO.m: Comprised of main configuration sections of the PSO algorithm and parameters setting. You should run this file
 2- NPV.m: NPV() function which takes well positions from PSO.m and assings it to ECLDATA variable and sends it to Eclipse.m
 3- Eclipse.m: Takes well positions from NPV.m and writes them to "sched.m" on 5th line after the "WELSPECS". Then calls ECLIPSE software using dos('$multirun.bat') command.
@@ -34,8 +38,11 @@ You can change the Oil and gas price, drilling, water injection and production c
 
 Output files:
 Three output files are provided for test. Black dots on the figures indicate the results from PSO method.
+
 1- "Well location PUNQS3 (4 prods 2 inj).fig"
+
 2- "Well location PUNQS3 (4 prods 3 inj).fig"
+
 3- "Well location PUNQS3 (4 prods 4 inj).fig"
 
 
