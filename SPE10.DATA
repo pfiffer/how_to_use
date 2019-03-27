@@ -1,0 +1,272 @@
+RUNSPEC
+
+TITLE
+SPE10-FIRST LAYER
+
+--        Number of cells
+--       NX      NY      NZ
+--       --      --      --
+DIMENS
+60 220 1 /
+
+-- Phases
+OIL
+WATER
+
+
+-- Units
+
+FIELD
+
+
+-- Maximum well/connection/group values
+--     #wells  #cons/w  #grps  #wells/grp
+--     ------  -------  -----  ----------
+WELLDIMS
+10 3 5  10/
+
+EQLDIMS
+-- num num   max    max    max
+-- equ depth nodes  tab   tracer
+-- reg nodes VD tab tracer nodes
+    1  100     10    1      20 /
+
+-- Maximum number of saturation (relative permeability) tables
+TABDIMS
+--1/
+-- num num  max  max     max   max
+-- sat pvt  sat press    fip   Rs
+-- tab tab nodes nodes regions nodes
+    1    1   45   15      15   15 /
+
+
+REGDIMS
+-- max  sets max  max
+-- fip  fip  res  flux
+-- reg  reg  reg  reg
+    1    1    0    0    /
+
+-- Unified output files
+UNIFOUT
+
+
+-- Simulation start date
+START
+1 Jan 2014 /
+
+--================================================================
+GRID
+
+GRIDUNITS
+'FEET'/ 
+
+-- Size of each cell in X, Y and Z directions
+DX
+13200*80 /    -- Originally was 500
+
+
+DY
+13200*80/
+
+
+DZ
+13200*5/
+
+
+BOX
+1 60 1 220 1 1 /
+
+TOPS
+13200*8917/
+
+ENDBOX
+
+-- Permeability in X, Y and Z directions for each cell
+
+--PERMX
+INCLUDE
+'perm.inc' /
+
+COPY
+PERMX PERMY/
+PERMX PERMZ /
+/
+
+
+-- Porosity of each cell
+PORO
+13200*0.2  -- This originally was 0.15
+
+/
+
+-- Output file with geometry and rock properties (.INIT)
+INIT
+
+--================================================================
+PROPS
+
+
+-------- THE PROPS SECTION DEFINES THE REL. PERMEABILITIES, CAPILLARY
+-------- PRESSURES, AND THE PVT PROPERTIES OF THE RESERVOIR FLUIDS
+----------------------------------------------------------------------
+-- WATER RELATIVE PERMEABILITY AND CAPILLARY PRESSURE ARE TABULATED AS
+-- A FUNCTION OF WATER SATURATION.
+--
+SWOF 
+-- SW  Krw  Krow   PCOW
+0	0	1	49.081
+0.0150586	1.63797e-005	0.99712	48.7984
+0.0301171	3.27594e-005	0.994239	48.5158
+0.06	6.5264e-005	0.988523	47.9549
+0.08	8.70187e-005	0.984697	47.5796
+0.10541	0.000114658	0.979837	47.1027
+0.135527	0.000147418	0.974076	46.5375
+0.16	0.00019655	0.966128	45.9423
+0.180703	0.000366466	0.951272	44.6639
+0.21082	0.00061365	0.927639	42.8041
+0.24	0.000853142	0.90474	41.0022
+0.26	0.00113516	0.885868	39.5974
+0.28	0.00323788	0.852399	35.569
+0.301171	0.00695788	0.813372	32.1436
+0.331288	0.015598	0.758509	28.2814
+0.36	0.0276472	0.703792	25.3658
+0.38	0.0385431	0.65657	23.6897
+0.4	0.0459879	0.613681	22.2522
+0.42164	0.0543156	0.565933	20.8491
+0.451757	0.0675942	0.498484	19.1592
+0.48	0.0813421	0.399402	17.7418
+0.5	0.0928013	0.360421	16.882
+0.52705	0.108635	0.309143	15.8523
+0.557167	0.127894	0.239744	14.8322
+0.58	0.144533	0.191577	14.138
+0.6	0.160042	0.146819	13.5626
+0.62	0.177145	0.103251	13.0268
+0.647518	0.20401	0.0508719	12.3443
+0.677635	0.235474	0.0382669	11.6333
+0.7	0.262003	0.0271377	11.1399
+0.72	0.287603	0.0204597	10.7188
+0.74	0.317268	0.008372	10.3321
+0.752928	0.337421	0	10.093
+0.76	0.348446	0	9.96227
+0.78	0.381544	0	9.6159
+0.82	0.456188	0	8.92813
+0.84	0.498653	0	8.59173
+0.86	0.544671	0	8.28487
+0.88	0.593776	0	7.98945
+0.9	0.650856	0	7.69448
+0.94	0.777809	0	7.02801
+0.96	0.847091	0	6.6249
+0.98	0.921427	0	4.17119
+1	1	0	0           /
+
+ 
+-----------------------------------------------------------------------
+PVCDO
+3600 1.12 1.6e-5 0.88 0 /
+PVTW
+4500 1.00341 3.00E-06 0.52341 0.00E-01 /
+ROCK
+4500 5e-006 /
+DENSITY
+45 63.002 0.072 /
+
+
+--================================================================
+REGIONS
+
+EQLNUM
+13200*1 
+/
+
+FIPNUM
+13200*1 
+/
+
+
+--================================================================
+SOLUTION
+
+-------- THE SOLUTION SECTION DEFINES THE INITIAL STATE OF THE SOLUTION
+-------- VARIABLES (PHASE PRESSURES, SATURATIONS AND GAS-OIL RATIOS)
+------------------------------------------------------------------------
+-- DATA FOR INITIALISING FLUIDS TO POTENTIAL EQUILIBRIUM
+--
+--    DATUM  DATUM   OWC    OWC    GOC    GOC    RSVD   RVVD   SOLN
+--    DEPTH  PRESS  DEPTH   PCOW  DEPTH   PCOG  TABLE  TABLE   METH
+EQUIL
+12000         5283        12000           1*              12000           3*  10  /
+
+
+
+-- Output to Restart file for t=0 (.UNRST)
+--     Restart file
+--     for init cond
+--     -------------
+RPTRST
+basic=2 /
+
+
+-- SWITCH ON OUTPUT OF INITIAL SOLUTION
+--RPTSOL
+-- 'RESTART=1' 'FIP=1'  /
+
+--================================================================
+SUMMARY
+
+
+-- Field average pressure
+FPR
+
+
+-- Field Oil Production Total
+FOPT
+
+
+-- Field Water Production Total
+FWPT
+
+-- Field Water Production Rate
+FWPR
+
+-- Filed Water Injection Rate
+FWIR
+
+-- Filed Water Injection Total
+FWIT
+
+-- Create Excel readable Run Summary file (.RSM)
+EXCEL
+
+
+--================================================================
+SCHEDULE
+
+
+
+-- Output to Restart file for t>0 (.UNRST)
+--     Restart file
+--      every step
+--     ------------
+RPTRST
+basic=2 /
+
+
+INCLUDE
+'sched.dat'
+/
+
+WCONPROD
+
+'PROD*' OPEN BHP 1* 1* 20000 1* 1* 1000 /
+/
+
+WCONINJE
+'INJ*'  WATER  OPEN   RATE   6000  1*   9000/
+/
+
+
+
+-- Number and size (days) of timesteps
+TSTEP
+1 2 2 2.305 4*7.305 9*36.525 19*365.25/
+END
