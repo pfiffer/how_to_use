@@ -1,0 +1,14 @@
+WELSPECS
+P1 G 1 1 1* OIL/
+P2 G 1 25 1* OIL/
+P3 G 25 1 1* OIL/
+P4 G 25 25 1* OIL/
+I1 G 14 10 1* WATER/ 
+/
+COMPDAT
+P1 1 1 1 1 OPEN 0 1* 1 1* -1 /
+P2 1 25 1 1 OPEN 0 1* 1 1* -1 /
+P3 25 1 1 1 OPEN 0 1* 1 1* -1 /
+P4 25 25 1 1 OPEN 0 1* 1 1* -1 /
+I1 2* 1 1 OPEN 0 1* 1 1* -1 / 
+/ 

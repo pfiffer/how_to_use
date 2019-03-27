@@ -1,0 +1,31 @@
+Instructions to use the Direct Search Method on the Synthetic models
+
+Files included:
+1- Direct.m: Comprised of main loops connecting to NPV.m and the plotting sections
+2- NPV.m: Takes well positions from Direct.m and assings it to ECLDATA variable and sends it to Eclipse.m
+3- Eclipse.m: Takes well positions from NPV.m and writes them to "sched.m" on 5th line after the "WELSPECS". Then calls ECLIPSE software using dos('$multirun.bat') command.
+   Finally, extracts FOPT, FWPT, and FWIT from "HTCM.data" and send them back to NPV.m to calculate the Net Present Value
+4- Perm-het.txt: Conatains the heterogenous permeability values.
+5- sched.dat: Contains well locations.
+6- Perm-het.txt: Permeability distribution file to be loaded from MATLAB.
+
+
+To use this method you should provide the upper bounds of the model under investigation to be used in the main loops.
+The systhetic models provided for validation in the included file has 25 by 25 grid blocks that are entered in lines 23 to 25.
+
+Note: The original file is arranged for heterogeneous cases. If you want to change it to a homogenous one, you should make the following changes to some file:
+1- Uncomment lines 158 to 160 in HTCM.data file.
+2- As the NPV map will be symmetric, it will be enough to calculate only a quarter of the NPV map and finally replicate it to other parts
+	So, you should change the upper bounds of the "for" loops to "13".
+
+3- Also, uncomment lines 35 and 35, then comment lines 45, 47-49 and uncomment line 46.
+
+
+
+
+Software Requirements:
+		You need to have Eclipse 2010.1 and MATLAB R2013a or higher versions to run these files.
+
+Note: If you are using MATLAB R2015a, you need to change the 47th line of the Eclipse.m to:
+""""""""""""""""	AA = cell2mat(A.textdata(4));	""""""""""""""""""""""
+(Only the text, not quotations and space)
