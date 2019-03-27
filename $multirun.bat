@@ -1,0 +1,1 @@
+call $ECLIPSE -file SPE10
