@@ -20,7 +20,9 @@ Note: The original file is arranged for heterogeneous cases. If you want to chan
 
 3- Also, uncomment lines 35 and 35, then comment lines 45, 47-49 and uncomment line 46.
 
-
+Output files: Two output files are provided here for test.
+1- "NPV_Map_Hetero_4Production.fig"
+2- "NPV_Map_Homogeneous_4Production"
 
 
 Software Requirements:
