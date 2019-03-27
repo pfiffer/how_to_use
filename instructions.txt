@@ -1,9 +1,9 @@
 Instructions to use the Direct Search Method on the Synthetic models
 
 Files included:
-1- Direct.m: Comprised of main loops connecting to NPV.m and the plotting sections
-2- NPV.m: Takes well positions from Direct.m and assings it to ECLDATA variable and sends it to Eclipse.m
-3- Eclipse.m: Takes well positions from NPV.m and writes them to "sched.m" on 5th line after the "WELSPECS". Then calls ECLIPSE software using dos('$multirun.bat') command.
+1- Direct.m: Comprised of main loops connecting to NPV.m and the plotting sections. You should run this file
+2- NPV.m: This is a function which takes well positions from Direct.m and assings it to ECLDATA variable and sends it to Eclipse.m
+3- Eclipse.m: Contains Eclips() function which takes well positions from NPV.m and writes them to "sched.m" on 5th line after the "WELSPECS". Then calls ECLIPSE software using dos('$multirun.bat') command.
    Finally, extracts FOPT, FWPT, and FWIT from "HTCM.data" and send them back to NPV.m to calculate the Net Present Value
 4- Perm-het.txt: Conatains the heterogenous permeability values.
 5- sched.dat: Contains well locations.
