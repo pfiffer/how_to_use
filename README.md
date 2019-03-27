@@ -1,6 +1,6 @@
 # how_to_use
-Direct.m: Main loops of the algorithm which sends well locations to the NPV.m
-NPV.m: Gets well locations and sends them to Eclipse.m
+Direct.m: Main loops of the algorithm which sends well locations to the NPV.m. You should run this file
+NPV.m: This is a function which gets well locations and sends them to Eclipse.m
 Eclipse.m: Contains Eclipse() function which takes well locations ans writes them to the sched.dat file then calls ECLIPSE software to simulate the model with new well configuration
 Perm-het.txt: Containig heterogeneous permeability values
 HTCM.data: containig characteristics of the synthetic models (Included for test).
