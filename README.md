@@ -43,7 +43,7 @@ This region is taken as the search domain of the optimization algorithm.
 
 TOF and Index is calculated using "FMM_2" function. This function takes the production well positions and permeability as the input data.
 Next, you should specify the number and dimension of grid blocks of the model and the other properties of the fluid and rock to calculate the diffusivity constant.
-Index of each region is calculated and assigned to FPI variable and returned.
+Index of each region is calculated and assigned to FPI (Frozen Points Index) variable and returned.
 
 End of the Fast Marching Method Function
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
