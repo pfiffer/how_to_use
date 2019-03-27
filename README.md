@@ -1,9 +1,9 @@
 # how_to_use
-Direct.m: Main loops of the algorithm which sends well locations to the NPV.m \n
-NPV.m: Gets well locations and sends them to Eclipse.m \n
-Eclipse.m: Contains Eclipse() function which takes well locations ans writes them to the sched.dat file then calls ECLIPSE software to simulate the model with new well configuration \n
-Perm-het.txt: Containig heterogeneous permeability values.\n
-HTCM.data: containig characteristics of the synthetic models (Included for test). \n
+Direct.m: Main loops of the algorithm which sends well locations to the NPV.m
+NPV.m: Gets well locations and sends them to Eclipse.m
+Eclipse.m: Contains Eclipse() function which takes well locations ans writes them to the sched.dat file then calls ECLIPSE software to simulate the model with new well configuration
+Perm-het.txt: Containig heterogeneous permeability values
+HTCM.data: containig characteristics of the synthetic models (Included for test).
 
 Note: The original file is arranged for heterogeneous cases. If you want to change it to a homogenous one, you should make the following changes to some file:
 1- Uncomment lines 158 to 160 in HTCM.data file.
