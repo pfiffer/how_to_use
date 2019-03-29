@@ -1,21 +1,13 @@
 # how_to_use
-Direct.m: Main loops of the algorithm which sends well locations to the NPV.m. You should run this file
-NPV.m: This is a function which gets well locations and sends them to Eclipse.m
-Eclipse.m: Contains Eclipse() function which takes well locations ans writes them to the sched.dat file then calls ECLIPSE software to simulate the model with new well configuration
-Perm-het.txt: Containig heterogeneous permeability values
-HTCM.data: containig characteristics of the synthetic models (Included for test).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	DIRECT SEARCH METHOD
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Note: The original file is arranged for heterogeneous cases. If you want to change it to a homogenous one, you should make the following changes to some file:
-1- Uncomment lines 158 to 160 in HTCM.data file.
-2- As the NPV map will be symmetric, it will be enough to calculate only a quarter of the NPV map and finally replicate it to other parts
-	So, you should change the upper bounds of the "for" loops to "13".
+Manuscript title: New Efficient Method for Injection Well Location Optimization using Fast Marching Method
+Paper Authors: Reza Yusefzadeh, Mohammad Sharifi, Yousef Rafiei
+Email address: reza_yusef@yahoo.com
+Postal address: Department of petroleum engineering, Amirkabir University of Technology, 424 Hafez Ave, Tehran, Iran
 
-3- Also, uncomment lines 35 and 35, then comment lines 45, 47-49 and uncomment line 46.
+This code is written to evaluate all the possible injection well configuration to find the global optimum in terms of the maximum
+Net Peresent Value using synthetic simple models
 
-
-Software Requirements:
-		You need to have Eclipse 2010.1 and MATLAB R2013a or higher versions to run these files.
-
-Note: If you are using MATLAB R2015a, you need to change the 47th line of the Eclipse.m to:
-""""""""""""""""	AA = cell2mat(A.textdata(4));	""""""""""""""""""""""
-(Only the text, not quotations and space)
