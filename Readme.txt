@@ -4,7 +4,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 Manuscript title: New Efficient Method for Injection Well Location Optimization using Fast Marching Method
-Author: Reza Yusefzadeh
+Paper Authors: Reza Yusefzadeh, Mohammad Sharifi, Yousef Rafiei
 Email address: reza_yusef@yahoo.com
 Postal address: Department of petroleum engineering, Amirkabir University of Technology, 424 Hafez Ave, Tehran, Iran
 
