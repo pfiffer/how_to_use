@@ -3,7 +3,7 @@ Instructions to use the PSO-FMM method on the Standard PUNQ-S3 model
 
 Title: New Efficient Method for Injection Well Location Optimization using Fast Marching Method
 
-Author: Reza Yusefzadeh
+Paper Authors: Reza Yusefzadeh, Mohammad Sharifi, Yousef Rafiei
 
 Email: reza_yusef@yahoo.com
 
