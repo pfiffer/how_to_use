@@ -1,11 +1,10 @@
 # how_to_use
-
 Instructions to use the PSO-FMM method on the Synthetic models
 
 
 Title: New Efficient Method for Injection Well Location Optimization using Fast Marching Method
 
-Paper Authors: Reza Yusefzadeh, Mohammad Sharifi, Yousef Rafiei
+Author: Reza Yusefzadeh
 
 Email: reza_yusef@yahoo.com
 
@@ -13,7 +12,7 @@ Files included:
 
 1- Direct.m: Comprised of main loops connecting to NPV.m and the plotting sections
 2- NPV.m: Takes well positions from Direct.m and assings it to ECLDATA variable and sends it to Eclipse.m
-3- Eclipse.m: Takes well positions from NPV.m and writes them to "sched.m" on 5th line after the "WELSPECS". Then calls ECLIPSE software using dos('$multirun.bat') command.
+3- Eclipse.m: Takes well positions from NPV.m and writes them to "sched.m" on 5th line after the "WELSPECS". Then calls Retina or ECLIPSE software using dos('$multirun.bat') command. We have used Retina software, but there is no difference if you use ECLIPSE. Therefore we configured files so as to be run by ECLIPSE.
    Finally, extracts FOPT, FWPT, and FWIT from "HTCM.data" and send them back to NPV.m to calculate the Net Present Value
 4- Perm-het.txt: Conatains the heterogenous permeability values.
 5- sched.dat: Contains well locations.
@@ -41,7 +40,7 @@ Time of Flight and drainage area of each production wells are assigned to TOF an
 Afterwards, regions where indices from wells are different are determined using Index variable to determine the drainage boundary.
 This region is taken as the search domain of the optimization algorithm.
 
-TOF and Index is calculated using "FMM_2" function. This function takes the production well positions and permeability as the input data.
+TOF and Index is calculated using "FMM_2" function. This function takes the production well positions and permeability as the input data. Note: Drainage boundaries can also be estimated using codes developed by Mohammad Sabry Hassouna which are located at https://github.com/rezayusefzadeh/how_to_use/tree/FMM which is more efficient.
 Next, you should specify the number and dimension of grid blocks of the model and the other properties of the fluid and rock to calculate the diffusivity constant.
 Index of each region is calculated and assigned to FPI (Frozen Points Index) variable and returned.
 
@@ -58,7 +57,8 @@ Three output files are provided to test the drainage boundaries. Black squares o
 2- "Drainage boundary of 4 prod wells homogeneous case.fig"
 
 Software Requirements:
-		You need to have Eclipse 2010.1 and MATLAB R2013a or higher versions to run these files.
+		You need to have Retina or Eclipse 2010.1 and Octave 4.4.1 or MATLAB R2013a or higher versions to run these files.
+		Note: we have used Octave but there is no difference if you use MATLAB
 
 Note: If you are using MATLAB R2015a, you need to change the 47th line of the Eclipse.m to:
 """"""""""""""""	AA = cell2mat(A.textdata(4));	""""""""""""""""""""""
