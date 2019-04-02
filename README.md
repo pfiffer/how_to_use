@@ -1,8 +1,9 @@
-Instructions to use the Direct Optimization Method (PSO) on SPE-10 model
+# How_to_use
+Instructions to use the PSO-FMM on SPE-10 model
 
 Title: New Efficient Method for Injection Well Location Optimization using Fast Marching Method
 
-Paper Authors: Reza Yusefzadeh, Mohammad Sharifi, Yousef Rafiei
+Author: Reza Yusefzadeh
 
 Email: reza_yusef@yahoo.com
 
@@ -10,13 +11,13 @@ Files included:
 
 1- PSO.m: Comprised of main configuration sections of the PSO algorithm and parameters setting.
 2- NPV.m: Takes well positions from PSO.m and assings it to ECLDATA variable and sends it to Eclipse.m
-3- Eclipse.m: Takes well positions from NPV.m and writes them to "sched.m" on 5th line after the "WELSPECS". Then calls ECLIPSE software using dos('$multirun.bat') command.
+3- Eclipse.m: Takes well positions from NPV.m and writes them to "sched.m" on 5th line after the "WELSPECS". Then calls Retina or ECLIPSE software using dos('$multirun.bat') command. We have used Retina software, but there is no difference if you use ECLIPSE. Therefore we configured files so as to be run by ECLIPSE.
    Finally, extracts FOPT, FWPT, and FWIT from "SPE10.data" and send them back to NPV.m to calculate the Net Present Value
 4- Perm-het.txt: Conatains the heterogenous permeability values.
 5- SPE10.data: Model characterization information.
 6- sched.dat: Contains well locations
 7- perm.inc: Permeability distribution file.
-8- Perm-het.txt: Permability distribution to be loaded from MATLAB.
+8- Perm-het.txt: Permability distribution to be loaded from Octave or MATLAB.
 9- FMM_2.m: Fast Marching Method to calculate Time of Flight and Production wells drainage boundary.
 
 Permeability map is loaded by MATLAB at line 16of Main.m
@@ -62,7 +63,8 @@ Three output files are provided for test. Black squares on the figures indicate 
 
 
 Software Requirements:
-		You need to have Eclipse 2010.1 and MATLAB R2013a or higher versions to run these files.
+		You need to have Retina or Eclipse 2010.1 and Octave 4.4.1 or MATLAB R2013a or higher versions to run these files.
+		Note: we have used Octave but there is no difference if you use MATLAB
 
 Note: If you are using MATLAB R2015a, you need to change the 48th line of the Eclipse.m to:
 """"""""""""""""	AA = cell2mat(A.textdata(4));	""""""""""""""""""""""
