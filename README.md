@@ -2,29 +2,22 @@
 
 Instructions to use the Direct Optimization Method (PSO) on the Standard PUNQ-S3 model
 
-Title: New Efficient Method for Injection Well Location Optimization using Fast Marching Method
-
-Paper Authors: Reza Yusefzadeh, Mohammad Sharifi, Yousef Rafiei
-
-Email: reza_yusef@yahoo.com
-
-
 Files included:
 
 1- PSO.m: Comprised of main configuration sections of the PSO algorithm and parameters setting. You should run this file
 2- NPV.m: NPV() function which takes well positions from PSO.m and assings it to ECLDATA variable and sends it to Eclipse.m
-3- Eclipse.m: Takes well positions from NPV.m and writes them to "sched.m" on 5th line after the "WELSPECS". Then calls ECLIPSE software using dos('$multirun.bat') command.
+3- Eclipse.m: Takes well positions from NPV.m and writes them to "sched.m" on 5th line after the "WELSPECS". Then calls Retina or ECLIPSE software using dos('$multirun.bat') command. We have used Retina software, but there is no difference if you use ECLIPSE. Therefore we configured files so as to be run by ECLIPSE.
    Finally, extracts FOPT, FWPT, FGPT, and FWIT from "SPE10.data" and send them back to NPV.m to calculate the Net Present Value
 4- Perm-het.txt: Conatains the heterogenous permeability values.
 5- SPE10.data: Model characterization information.
 6- sched.dat: Contains well locations
 7- PERM.inc: Permeability distribution file.
-8- Permx.txt: Permability distribution to be loaded from MATLAB.
+8- Permx.txt: Permability distribution to be loaded from Ocatve or MATLAB.
 9- PUNQS3.geo: Containig grid information
 10- ACTNUM.geo: Aquifer information
 11- PORO.inc: Porosity distribution file
 
-Permeability map is loaded by MATLAB at line 21 of PSO.m
+Permeability map is loaded by Octave or MATLAB at line 21 of PSO.m
 You should provide filename containing permeability values in the argument of load() function. This file should only contain numeric values.
 
 Then you should set the number of Maximum Iterations and number of Population denoted by MaxIt and nPop respectively.
@@ -37,6 +30,7 @@ To change the number of wells to be optimized (Default is 4), first of all, comm
 You can change the Oil and gas price, drilling, water injection and production costs in "NPV.m" file.
 
 Output files:
+
 Three output files are provided for test. Black dots on the figures indicate the results from PSO method.
 
 1- "Well location PUNQS3 (4 prods 2 inj).fig"
@@ -47,7 +41,8 @@ Three output files are provided for test. Black dots on the figures indicate the
 
 
 Software Requirements:
-		You need to have Eclipse 2010.1 and MATLAB R2013a or higher versions to run these files.
+		You need to have Retina or Eclipse 2010.1 and Octave 4.41 or MATLAB R2013a or higher versions to run these files.
+		Note: we have used Octave but there is no difference if you use MATLAB.
 
 Note: If you are using MATLAB R2015a, you need to change the 48th line of the Eclipse.m to:
 """"""""""""""""	AA = cell2mat(A.textdata(4));	""""""""""""""""""""""
