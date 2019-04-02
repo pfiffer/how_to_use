@@ -10,7 +10,7 @@ Files included:
 
 1- PSO.m: Comprised of main configuration sections of the PSO algorithm and parameters setting.
 2- NPV.m: Takes well positions from PSO.m and assings it to ECLDATA variable and sends it to Eclipse.m
-3- Eclipse.m: Takes well positions from NPV.m and writes them to "sched.m" on 5th line after the "WELSPECS". Then calls ECLIPSE software using dos('$multirun.bat') command. We have used Retina software, but there is no difference if you use ECLIPSE. Therefore we configured filed so to be run using ECLIPSE.
+3- Eclipse.m: Takes well positions from NPV.m and writes them to "sched.m" on 5th line after the "WELSPECS". Then calls Retina or ECLIPSE software using dos('$multirun.bat') command. We have used Retina software, but there is no difference if you use ECLIPSE. Therefore we configured files so as to be run by ECLIPSE.
    Finally, extracts FOPT, FWPT, and FWIT from "SPE10.data" and send them back to NPV.m to calculate the Net Present Value
 4- Perm-het.txt: Conatains the heterogenous permeability values.
 5- SPE10.data: Model characterization information.
