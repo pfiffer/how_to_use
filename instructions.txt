@@ -8,11 +8,12 @@ Postal address: Department of petroleum engineering, Amirkabir University of Tec
 Files included:
 1- Direct.m: Comprised of main loops connecting to NPV.m and the plotting sections. You should run this file
 2- NPV.m: This is a function which takes well positions from Direct.m and assings it to ECLDATA variable and sends it to Eclipse.m
-3- Eclipse.m: Contains Eclips() function which takes well positions from NPV.m and writes them to "sched.m" on 5th line after the "WELSPECS". Then calls ECLIPSE software using dos('$multirun.bat') command.
+3- Eclipse.m: Contains Eclips() function which takes well positions from NPV.m and writes them to "sched.m" on 5th line after the "WELSPECS". Then calls Retina or ECLIPSE software using dos('$multirun.bat') command. We have used Retina software, but there is no difference if you use ECLIPSE. Therefore we configured files so as to be run by ECLIPSE.
+   Finally, extracts FOPT, FWPT, FGPT, and FWIT from "SPE10.data" and send them back to NPV.m to calculate the Net Present Value
    Finally, extracts FOPT, FWPT, and FWIT from "HTCM.data" and send them back to NPV.m to calculate the Net Present Value
 4- Perm-het.inc: Conatains the heterogenous permeability values.
 5- sched.dat: Contains well locations.
-6- Perm-het.txt: Permeability distribution file to be loaded from MATLAB.
+6- Perm-het.txt: Permeability distribution file to be loaded from Octave or MATLAB.
 
 
 To use this method you should provide the upper bounds of the model under investigation to be used in the main loops.
@@ -31,7 +32,8 @@ Output files: Two output files are provided here for test.
 
 
 Software Requirements:
-		You need to have Eclipse 2010.1 and MATLAB R2013a or higher versions to run these files.
+		You need to have Retina or Eclipse 2010.1 and Octave 4.4.1 MATLAB R2013a or higher versions to run these files.
+		Note: we have used Octave but there is no difference if you use MATLAB
 
 Note: If you are using MATLAB R2015a, you need to change the 47th line of the Eclipse.m to:
 """"""""""""""""	AA = cell2mat(A.textdata(4));	""""""""""""""""""""""
