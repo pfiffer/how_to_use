@@ -39,7 +39,7 @@ Time of Flight and drainage area of each production wells are assigned to TOF an
 Afterwards, regions where indices from wells are different are determined using Index variable to determine the drainage boundary.
 This region is taken as the search domain of the optimization algorithm.
 
-TOF and Index is calculated using "FMM_2" function. This function takes the production well positions and permeability as the input data.
+TOF and Index is calculated using "FMM_2" function. This function takes the production well positions and permeability as the input data. Note: Drainage boundaries can also be estimated using codes developed by Mohammad Sabry Hassouna which are located at https://github.com/rezayusefzadeh/how_to_use/tree/FMM which is more efficient.
 Next, you should specify the number and dimension of grid blocks of the model and the other properties of the fluid and rock to calculate the diffusivity constant.
 Index of each region is calculated and assigned to FPI (Frozen Points Index) variable and returned.
 
