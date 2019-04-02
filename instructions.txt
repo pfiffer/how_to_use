@@ -1,4 +1,4 @@
-Instructions to use the Fast Marching Method
+Instructions to use the Fast Marching Method by M. S. Hassouna
 
 Title: New Efficient Method for Injection Well Location Optimization using Fast Marching Method
 
@@ -27,4 +27,5 @@ This output file is provided to check the calculated drianage boundary of the sy
 1- "Heteroegenous synthetic case drainage boundary.fig"
 
 Software Requirements:
-		 MATLAB R2013a or higher versions to run these files.
+		Octave 4.4.1 or MATLAB R2013a or higher versions to run these files.
+		Note: we have used Octave but there is no difference if you use MATLAB
